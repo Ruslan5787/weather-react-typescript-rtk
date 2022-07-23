@@ -1,0 +1,56 @@
+@import "./src/styles/variables";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: var(#{--card-background-default});
+  border-radius: 10px;
+  padding: 11px;
+  transition: $transition-03;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+
+  svg {
+    margin-bottom: 13px;
+  }
+}
+
+.day {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: var(#{--text-color-default});
+  margin-bottom: 7px;
+}
+
+.date {
+  font-size: 14px;
+  line-height: 17px;
+  color: $cadet-grey;
+  margin-bottom: 12px;
+}
+
+.degrees {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(#{--text-color-default});
+}
+
+.sub_degrees {
+  font-size: 13px;
+  line-height: 16px;
+  color: $cadet-grey;
+  margin-bottom: 6px;
+}
+
+.weather_type {
+  font-size: 13px;
+  line-height: 16px;
+  color: $cadet-grey;
+}

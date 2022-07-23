@@ -1,0 +1,75 @@
+@import "./src/styles/variables";
+
+.modal {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.25);
+
+  &_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  &_body {
+    position: relative;
+    background-color: var(#{--components-background-default});
+    box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+    border-radius: 20px;
+
+    padding: 42px;
+    display: flex;
+  }
+
+  &_left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 26px;
+
+    svg {
+      width: 53px;
+      height: 53px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &_degrees {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 73px;
+    color: $blueberry;
+  }
+
+  &_day {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: var(#{--text-color-default});
+    margin-bottom: 12px;
+  }
+
+  &_bottom_info {
+    font-size: 15px;
+    line-height: 18px;
+    color: #939cb0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.btn_close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

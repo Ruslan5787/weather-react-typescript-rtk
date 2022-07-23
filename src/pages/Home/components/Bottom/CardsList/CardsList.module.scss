@@ -1,0 +1,12 @@
+@import "./src/styles/variables";
+
+.list {
+  box-shadow: var(#{--card-shadow-default});
+  border-radius: $border-radius;
+  background-color: var(#{--components-background-default});
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 14px;
+  padding: 20px;
+}

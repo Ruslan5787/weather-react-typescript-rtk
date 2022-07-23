@@ -1,0 +1,72 @@
+@import "./src/styles/variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 65px;
+  height: 65px;
+  margin-right: 20px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: $blueberry;
+}
+
+.change_theme {
+  display: flex;
+  margin-right: 20px;
+}
+
+.search_field {
+  display: flex;
+  align-items: center;
+  background-color: var(#{--search-field-background-default});
+  border-radius: 10px;
+
+  &_input {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(#{--text-color-default});
+
+    width: 154px;
+    border: none;
+    background: transparent;
+    padding: 8px 2px 8px 17px;
+
+    &::placeholder {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: var(#{--text-color-default});
+      display: flex;
+    }
+  }
+
+  &_button {
+    display: flex;
+    padding-right: 10px;
+
+    svg {
+      height: 24px;
+      path {
+        fill: var(#{--svg-fill-default});
+      }
+    }
+  }
+}

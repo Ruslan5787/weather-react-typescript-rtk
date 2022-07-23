@@ -1,0 +1,14 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.wrapper {
+  display: flex;
+}
+.wrapper :not(:last-child) {
+  margin-right: 15px;
+}
+
+/*# sourceMappingURL=Filter.module.css.map */

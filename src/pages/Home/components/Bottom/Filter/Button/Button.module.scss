@@ -1,0 +1,23 @@
+@import "./src/styles/variables";
+
+.button {
+  font-size: 18px;
+  line-height: 22px;
+
+  padding: 8px 20px;
+  background-color: var(#{--components-background-default});
+  box-shadow: $box-shadow;
+  border-radius: 5px;
+  transition: $transition-03;
+  color: var(#{--text-color-default});
+
+  &_active {
+    background: #4793ff;
+    color: #ffffff;
+  }
+
+  &:hover {
+    background: $blueberry;
+    color: $lite-background;
+  }
+}
