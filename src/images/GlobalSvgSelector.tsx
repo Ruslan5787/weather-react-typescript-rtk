@@ -1,47 +1,42 @@
 import React from "react";
 
-import {
-  RainIcon,
-  SmallRainSunIcon,
-  SmallRainIcon,
-  SunIcon,
-  MainlyCloudyIcon,
-} from "../images/weatherPictures";
-import {
-  TemperatureIcon,
-  PressureIcon,
-  PrecipitationIcon,
-  WindIcon,
-  CloseIcon,
-} from "./shared";
+import {MainlyCloudyIcon, SmallRainSunIcon, SunIcon,} from "../images/weatherPictures";
+import {CloseIcon, PrecipitationIcon, PressureIcon, TemperatureIcon, WindIcon,} from "./shared";
+import {FewCloudsIcon, FogIcon, ScatteredCloudsIcon, SnowIcon, ThunderstormIcon,} from "./weatherPictures";
 
 interface Props {
   id: string;
 }
 
 export const GlobalSvgSelector = (props: Props) => {
-  const { id } = props;
+  const {id} = props;
 
   switch (id) {
-    case "small_rain_sun":
-      return <SmallRainSunIcon />;
-    case "mainly_cloudy":
-      return <MainlyCloudyIcon />;
-    case "small_rain":
-      return <SmallRainIcon />;
-    case "rain":
-      return <RainIcon />;
-    case "sun":
-      return <SunIcon />;
+    case "01d":
+      return <SunIcon/>;
+    case "02d":
+      return <FewCloudsIcon/>;
+    case "03d":
+      return <ScatteredCloudsIcon/>;
+    case "04d":
+      return <MainlyCloudyIcon/>;
+    case "10d":
+      return <SmallRainSunIcon/>;
+    case "11d":
+      return <ThunderstormIcon/>;
+    case " 13d":
+      return <SnowIcon/>;
+    case "50d":
+      return <FogIcon/>;
 
     //----------------------------------
 
     case "temperature":
-      return <TemperatureIcon />;
+      return <TemperatureIcon/>;
     case "pressure":
-      return <PressureIcon />;
+      return <PressureIcon/>;
     case "precipitation":
-      return <PrecipitationIcon />;
+      return <PrecipitationIcon/>;
     case "wind":
       return <WindIcon />;
 
@@ -53,6 +48,4 @@ export const GlobalSvgSelector = (props: Props) => {
     default:
       return null;
   }
-
-  return null;
 };

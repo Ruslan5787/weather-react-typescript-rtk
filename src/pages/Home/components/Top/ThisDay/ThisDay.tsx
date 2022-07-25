@@ -1,17 +1,17 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 
 import styles from "./ThisDay.module.scss";
-import { ReactComponent as SunLogo } from "../../../../../images/weatherPictures/sun.svg";
-import { IWeather } from "../../../../../store/types/Weather";
-import { addZeroToLittleTime, getUserCityTime } from "../../../../helpers";
-import { getHours, getMinutes } from "date-fns";
+import {ReactComponent as SunLogo} from "../../../../../images/weatherPictures/sun.svg";
+import {IWeather} from "../../../../../store/types/Weather";
+import {addZeroToLittleTime, getUserCityTime} from "../../../../helpers";
+import {getHours, getMinutes} from "date-fns";
 
 interface ThisDayProps {
   weatherToday: IWeather;
 }
 
 export const ThisDay: FC<ThisDayProps> = (props) => {
-  const { weatherToday } = props;
+  const {weatherToday} = props;
 
   const cityTime = getUserCityTime(weatherToday.timezone);
   const hoursAndMinutes = addZeroToLittleTime(
@@ -25,14 +25,14 @@ export const ThisDay: FC<ThisDayProps> = (props) => {
         <span className={styles.degrees}>
           {Math.round(weatherToday.temperature)}°
         </span>
-        <span className={styles.day}>Today</span>
+        <span className={styles.day}>Сегодня</span>
       </div>
 
       <div className={styles.bottom}>
         <span className={styles.info}>
-          <>Time: {hoursAndMinutes}</>
+          <>Время: {hoursAndMinutes}</>
         </span>
-        <span className={styles.info}>City: {weatherToday.city_name}</span>
+        <span className={styles.info}>Город: {weatherToday.city_name}</span>
       </div>
 
       <SunLogo className={styles.weather_picture} />

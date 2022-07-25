@@ -6,7 +6,7 @@ const API_WEATHER = axios.create({
 
 API_WEATHER.interceptors.request.use((config) => {
   config.url =
-    config.url + "&units=metric&appid=" + process.env.REACT_APP_API_KEY;
+    config.url + "&units=metric&appid=" + process.env.REACT_APP_API_KEY + "&lang=ru";
 
   return config;
 });

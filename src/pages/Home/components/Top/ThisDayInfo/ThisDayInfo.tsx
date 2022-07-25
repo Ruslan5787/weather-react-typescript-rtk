@@ -1,12 +1,9 @@
-import React, { FC } from "react";
+import React, {FC} from "react";
 
-import { ThisDayInfoItem } from "./ThisDayInfoItem/ThisDayInfoItem";
-import { GlobalSvgSelector } from "../../../../../images/GlobalSvgSelector";
-import { IWeather } from "../../../../../store/types/Weather";
-import {
-  getPressureInMillimeters,
-  getStateMercuryColumn,
-} from "../../../../helpers";
+import {ThisDayInfoItem} from "./ThisDayInfoItem/ThisDayInfoItem";
+import {GlobalSvgSelector} from "../../../../../images/GlobalSvgSelector";
+import {IWeather} from "../../../../../store/types/Weather";
+import {getPressureInMillimeters, getStateMercuryColumn, getWindDescription, getWindName,} from "../../../../helpers";
 
 export interface IItem {
   id: number;
@@ -20,36 +17,43 @@ interface ThisDayInfoProps {
 }
 
 export const ThisDayInfo: FC<ThisDayInfoProps> = (props) => {
-  const { weatherToday } = props;
+  const {weatherToday} = props;
+
+  const windSpeed = Math.round(weatherToday.wind_speed);
 
   const items: IItem[] = [
     {
       id: 0,
       icon_id: "temperature",
-      name: "Temperature",
-      value: `${weatherToday.temperature}° - feels like ${weatherToday.feels_like}°`,
+      name: "Температура",
+      value: `${Math.round(
+        weatherToday.temperature
+      )}° - ощущается как ${Math.round(weatherToday.feels_like)}°`,
     },
     {
       id: 1,
       icon_id: "pressure",
-      name: "Pressure",
+      name: "Давление",
       value: `${getPressureInMillimeters(
         weatherToday.pressure
-      )} mm of mercury - ${getStateMercuryColumn(
+      )} мм ртутного столба - ${getStateMercuryColumn(
         getPressureInMillimeters(weatherToday.pressure)
       )}`,
     },
     {
       id: 2,
       icon_id: "precipitation",
-      name: "Precipitation",
+      name: "Осадки",
       value: weatherToday.description,
     },
     {
       id: 3,
       icon_id: "wind",
-      name: "Wind",
-      value: `${weatherToday.wind_speed} m/s юго-запад - легкий ветер`,
+      name: "Ветер",
+      value: `${windSpeed} м/с ${getWindName(
+        weatherToday.wind_deg
+      )} - ${getWindDescription(windSpeed)}
+      `,
     },
   ];
 
