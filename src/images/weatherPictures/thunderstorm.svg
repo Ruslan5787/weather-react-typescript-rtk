@@ -1,0 +1,24 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path opacity="0.32"
+          d="M38 29C41.314 29 44 26.314 44 23C44 19.686 41.314 17 38 17H37.938C37.978 16.672 38 16.338 38 16C38 11.582 34.418 8 30 8C26.5 8 23.524 10.248 22.44 13.378C21.67 13.132 20.852 13 20 13C15.582 13 12 16.582 12 21C12 25.418 15.582 29 20 29C20.69 29 21.36 28.912 22 28.748V29H38Z"
+          fill="#73A5E6"/>
+    <path d="M12 39C7.582 39 4 35.418 4 31C4 26.582 7.582 23 12 23C12.834 23 13.636 23.128 14.392 23.364C15.518 19.68 18.946 17 23 17C27.97 17 32 21.03 32 26C32 26.47 31.964 26.93 31.894 27.38C32.55 27.134 33.258 27 34 27C37.314 27 40 29.686 40 33C40 36.314 37.314 39 34 39H12Z"
+          fill="url(#paint0_linear_2_530)"/>
+    <path d="M14 26C14 30.97 18.03 35 23 35C27.502 35 31.23 31.696 31.894 27.38C32.55 27.134 33.258 27 34 27C37.314 27 40 29.686 40 33C40 36.314 37.314 39 34 39H12C7.582 39 4 35.418 4 31C4 26.582 7.582 23 12 23C12.834 23 13.636 23.128 14.392 23.364C14.136 24.198 14 25.082 14 26Z"
+          fill="url(#paint1_radial_2_530)"/>
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M30.3568 33H26.9528L24 40.0029H27.0375L24.869 46L31 38.001H27.6173L30.3568 33Z" fill="#66AFEB"/>
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M19.3568 33H15.9528L13 40.0029H16.0375L13.869 46L20 38.001H16.6173L19.3568 33Z" fill="#66AFEB"/>
+    <defs>
+        <linearGradient id="paint0_linear_2_530" x1="22" y1="17" x2="22" y2="39" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#9FC7FF"/>
+            <stop offset="1" stop-color="#9BC1F5"/>
+        </linearGradient>
+        <radialGradient id="paint1_radial_2_530" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(17.9439 -21.6966) rotate(-90) scale(20.9574 6.69705)">
+            <stop stop-color="#486DA8" stop-opacity="0.4"/>
+            <stop offset="1" stop-color="#486DA8" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+</svg>
