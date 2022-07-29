@@ -1,13 +1,15 @@
-import React from "react";
+import React, { FC, useState } from "react";
 
 import { Filter } from "./Filter/Filter";
 import { CardsList } from "./CardsList/CardsList";
 
-export const Bottom: React.FC = () => {
+export const Bottom: FC = () => {
+  const [activeFilter, setActiveFilter] = useState<number>(0);
+
   return (
     <div>
-      <Filter />
-      <CardsList />
+      <Filter activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
+      <CardsList activeFilter={activeFilter} />
     </div>
   );
 };

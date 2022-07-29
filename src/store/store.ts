@@ -1,13 +1,15 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
+import userInfoReducer from "./reducers/UserInfoSlice";
+import weatherForecastReducer from "./reducers/ForecastSlice";
 import websiteThemeReducer from "./reducers/WebsiteThemeSlice";
-import weatherForecastReducer from "./reducers/WeatherForecastSlice";
-import userCityReducer from "./reducers/UserCitySlice";
+import weatherForTodayReducer from "./reducers/WeatherForTodaySlice";
 
 export const rootReducer = combineReducers({
+  userInfo: userInfoReducer,
   websiteTheme: websiteThemeReducer,
   weatherForecast: weatherForecastReducer,
-  userCity: userCityReducer,
+  weatherForToday: weatherForTodayReducer,
 });
 
 export const store = configureStore({
@@ -15,7 +17,3 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }),
 });
-
-export type RootState = ReturnType<typeof rootReducer>;
-export type AppStore = typeof store;
-export type AppDispatch = AppStore["dispatch"];

@@ -1,108 +1,64 @@
-import React, { useState } from "react";
+import React, { FC, memo, useEffect, useState } from "react";
 
 import styles from "./CardsList.module.scss";
-import { Card } from "./Card/Card";
+
 import { GlobalSvgSelector } from "../../../../../images/GlobalSvgSelector";
 
-interface ItemProps {
-  id: number;
-  day: string;
-  date: string;
-  icon_id: string;
-  degrees: string;
-  subDegrees: string;
-  weatherType: string;
+import {
+  getCityName,
+  getIsLoadingForecast,
+  getWeatherForecast,
+} from "../../../../../store/selectors/selectors";
+import { fetchForecast } from "../../../../../store/ActionCreators";
+import { useAppDispatch, useAppSelector } from "../../../../../hooks/redux";
+
+import { IWeatherForDay } from "../../../../../types/Weather";
+import { Card } from "./Card/Card";
+import { LoadingCard } from "./Card/LoadingCard";
+
+interface CardsListProps {
+  activeFilter: number;
 }
 
-const items = [
-  {
-    id: 1,
-    day: "Сегодня",
-    date: "28 авг",
-    icon_id: "sun",
-    degrees: "+18",
-    subDegrees: "+15",
-    weatherType: "Облачно",
-  },
-  {
-    id: 2,
-    day: "Завтра",
-    date: "29 авг",
-    icon_id: "small_rain_sun",
-    degrees: "+18",
-    subDegrees: "+15",
-    weatherType: "небольшой дождь и солнце",
-  },
-  {
-    id: 3,
-    day: "Ср",
-    date: "30 авг",
-    icon_id: "small_rain",
-    degrees: "+18",
-    subDegrees: "+15",
-    weatherType: "небольшой дождь",
-  },
-  {
-    id: 4,
-    day: "Чт",
-    date: "28 авг",
-    icon_id: "mainly_cloudy",
-    degrees: "+18",
-    subDegrees: "+15",
-    weatherType: "Облачно",
-  },
-  {
-    id: 5,
-    day: "Пт",
-    date: "28 авг",
-    icon_id: "rain",
-    degrees: "+18",
-    subDegrees: "+15",
-    weatherType: "Облачно",
-  },
-  {
-    id: 6,
-    day: "Сб",
-    date: "28 авг",
-    icon_id: "sun",
-    degrees: "+18",
-    subDegrees: "+15",
-    weatherType: "Облачно",
-  },
-  {
-    id: 7,
-    day: "Вс",
-    date: "28 авг",
-    icon_id: "sun",
-    degrees: "+18",
-    subDegrees: "+15",
-    weatherType: "Облачно",
-  },
-];
+export const CardsList: FC<CardsListProps> = memo((props) => {
+  const dispatch = useAppDispatch();
+  const userCity = useAppSelector(getCityName);
+  const forecast = useAppSelector(getWeatherForecast);
 
-export const CardsList: React.FC = () => {
+  const { activeFilter } = props;
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [clickedCardId, setClickedCardId] = useState<number>(0);
+  const isLoading = useAppSelector(getIsLoadingForecast);
 
-  function changeFlagModalOpen() {
-    setIsModalOpen(!isModalOpen);
+  useEffect(() => {
+    dispatch(fetchForecast(userCity));
+  }, [userCity]);
+
+  function clickForCard(id: number) {
+    setClickedCardId(id);
   }
+
+  const loadingCardsList = Array(7)
+    .fill(0)
+    .map(() => <LoadingCard key={Math.random()} />);
+
+  const cardsList = forecast[activeFilter]?.map((item: IWeatherForDay) => (
+    <Card
+      key={item?.dt}
+      weatherForDay={item}
+      isModalOpen={isModalOpen}
+      setIsModalOpen={setIsModalOpen}
+      setModalForClickedCard={clickForCard}
+      // I use weather dt how id for card
+      isModalForClickedCard={clickedCardId === item?.dt}
+    >
+      <GlobalSvgSelector id={item.weather[0].icon} />
+    </Card>
+  ));
 
   return (
     <div className={styles.list}>
-      {items.map((item: ItemProps) => (
-        <Card
-          key={item.id}
-          day={item.day}
-          date={item.date}
-          degrees={item.degrees}
-          subDegrees={item.degrees}
-          weatherType={item.weatherType}
-          isModalOpen={isModalOpen}
-          changeFlagModalOpen={changeFlagModalOpen}
-        >
-          {<GlobalSvgSelector id={item.icon_id} />}
-        </Card>
-      ))}
+      {isLoading ? loadingCardsList : cardsList}
     </div>
   );
-};
+});

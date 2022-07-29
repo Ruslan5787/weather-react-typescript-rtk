@@ -13,13 +13,9 @@
   &:hover {
     box-shadow: $box-shadow;
   }
-
-  svg {
-    margin-bottom: 13px;
-  }
 }
 
-.day {
+.date {
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
@@ -28,11 +24,25 @@
   margin-bottom: 7px;
 }
 
-.date {
+.time {
   font-size: 14px;
   line-height: 17px;
   color: $cadet-grey;
   margin-bottom: 12px;
+}
+
+.image {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 13px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .degrees {

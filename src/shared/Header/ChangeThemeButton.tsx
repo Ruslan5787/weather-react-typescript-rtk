@@ -1,22 +1,24 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 
 import styles from "./Header.module.scss";
-import { ChangeThemeLogo } from "../../images/header";
 
+import { ChangeThemeIcon } from "../../images/shared/header";
+
+import { STORAGE } from "../../service/STORAGE";
+import { changeCssVariablesForTheme } from "../../service/ChangeCssVariablesForTheme";
+
+import { getWebsiteTheme } from "../../store/selectors/selectors";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { websiteThemeSlice } from "../../store/reducers/WebsiteThemeSlice";
 
-import { changeCssVariablesForTheme } from "../../model/ChangeCssVariablesForTheme";
-import { Storage } from "../../model/Storage";
-
-export function ChangeThemeButton() {
-  const { switchTheme } = websiteThemeSlice.actions;
+export const ChangeThemeButton: FC = () => {
   const dispatch = useAppDispatch();
-  const { theme } = useAppSelector((state) => state.websiteTheme);
+  const { theme } = useAppSelector(getWebsiteTheme);
+  const { switchTheme } = websiteThemeSlice.actions;
 
   useEffect(() => {
     changeCssVariablesForTheme(theme);
-    Storage.setItem("webSiteTheme", theme);
+    STORAGE.setItem("webSiteTheme", theme);
   }, [theme]);
 
   function changeTheme() {
@@ -25,7 +27,7 @@ export function ChangeThemeButton() {
 
   return (
     <button className={styles.change_theme} onClick={changeTheme}>
-      <ChangeThemeLogo />
+      <ChangeThemeIcon />
     </button>
   );
-}
+};

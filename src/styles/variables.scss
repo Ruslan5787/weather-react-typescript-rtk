@@ -35,6 +35,9 @@ $svg-background-light: #fff;
 $svg-fill-dark: #fff;
 $svg-fill-light: #000;
 
+$error-notification-background-dark: #a62929;
+$error-notification-background-light: #fc9c9c;
+
 $search-field-background-dark: #2e3035;
 $search-field-background-light: rgba(71, 147, 255, 0.2);
 
@@ -77,6 +80,11 @@ $base-color: #939cb0;
   --svg-fill-dark: #{$svg-fill-dark};
   --svg-fill-light: #{$svg-fill-light};
   --svg-fill-default: var(#{--svg-fill-light});
+
+  // error notification background
+  --error-notification-background-dark: #{$error-notification-background-dark};
+  --error-notification-background-light: #{$error-notification-background-light};
+  --error-notification-background-default: var(#{$error-notification-background-light});
 
   // search field background
   --search-field-background-dark: #{$search-field-background-dark};

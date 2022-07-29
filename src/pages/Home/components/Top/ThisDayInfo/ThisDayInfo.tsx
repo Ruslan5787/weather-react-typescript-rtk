@@ -1,65 +1,25 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
 
-import {ThisDayInfoItem} from "./ThisDayInfoItem/ThisDayInfoItem";
-import {GlobalSvgSelector} from "../../../../../images/GlobalSvgSelector";
-import {IWeather} from "../../../../../store/types/Weather";
-import {getPressureInMillimeters, getStateMercuryColumn, getWindDescription, getWindName,} from "../../../../helpers";
+import { getThisDayInfoItemsData } from "../../../../../helpers/helpers";
 
-export interface IItem {
-  id: number;
-  icon_id: string;
-  name: string;
-  value: string;
-}
+import { IWeatherForDay } from "../../../../../types/Weather";
+
+import { IThisDayInfoItem } from "../../../../../types/Home";
+
+import { ThisDayInfoItem } from "./ThisDayInfoItem/ThisDayInfoItem";
+import { GlobalSvgSelector } from "../../../../../images/GlobalSvgSelector";
 
 interface ThisDayInfoProps {
-  weatherToday: IWeather;
+  weatherForDay: IWeatherForDay;
 }
 
 export const ThisDayInfo: FC<ThisDayInfoProps> = (props) => {
-  const {weatherToday} = props;
-
-  const windSpeed = Math.round(weatherToday.wind_speed);
-
-  const items: IItem[] = [
-    {
-      id: 0,
-      icon_id: "temperature",
-      name: "Температура",
-      value: `${Math.round(
-        weatherToday.temperature
-      )}° - ощущается как ${Math.round(weatherToday.feels_like)}°`,
-    },
-    {
-      id: 1,
-      icon_id: "pressure",
-      name: "Давление",
-      value: `${getPressureInMillimeters(
-        weatherToday.pressure
-      )} мм ртутного столба - ${getStateMercuryColumn(
-        getPressureInMillimeters(weatherToday.pressure)
-      )}`,
-    },
-    {
-      id: 2,
-      icon_id: "precipitation",
-      name: "Осадки",
-      value: weatherToday.description,
-    },
-    {
-      id: 3,
-      icon_id: "wind",
-      name: "Ветер",
-      value: `${windSpeed} м/с ${getWindName(
-        weatherToday.wind_deg
-      )} - ${getWindDescription(windSpeed)}
-      `,
-    },
-  ];
+  const { weatherForDay } = props;
+  const items: IThisDayInfoItem[] = getThisDayInfoItemsData(weatherForDay);
 
   return (
     <>
-      {items.map((item: IItem) => (
+      {items.map((item: IThisDayInfoItem) => (
         <ThisDayInfoItem
           key={item.id}
           textName={item.name}

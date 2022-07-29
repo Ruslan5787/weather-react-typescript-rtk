@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import styles from "./ThisDayInfoItem.module.scss";
 
@@ -8,7 +8,7 @@ interface ThisDayInfoItemProps {
   textValue: string;
 }
 
-export const ThisDayInfoItem = (props: ThisDayInfoItemProps) => {
+export const ThisDayInfoItem: FC<ThisDayInfoItemProps> = (props) => {
   const { children, textName, textValue } = props;
 
   return (

@@ -1,13 +1,11 @@
-import React from "react";
-
-import styles from "./Home.module.scss";
+import React, { FC } from "react";
 
 import { Top } from "./Top/Top";
 import { Bottom } from "./Bottom/Bottom";
 
-export const Home: React.FC = () => {
+export const Home: FC = () => {
   return (
-    <div className={styles.home}>
+    <div>
       <Top />
       <Bottom />
     </div>

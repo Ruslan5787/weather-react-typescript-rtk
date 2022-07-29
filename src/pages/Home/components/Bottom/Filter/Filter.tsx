@@ -1,19 +1,31 @@
-import React from "react";
+import React, { FC } from "react";
 
 import styles from "./Filter.module.scss";
 
-import { Button } from "./Button/Button";
+import { BUTTONS_VALUE } from "../../../../data";
 
-export const Filter: React.FC = () => {
+import { Button } from "../../../../../shared/Button/Button";
+
+interface FilterProps {
+  activeFilter: number;
+  setActiveFilter: (filter: number) => void;
+}
+
+export const Filter: FC<FilterProps> = (props) => {
+  const { activeFilter, setActiveFilter } = props;
+
   return (
     <div className={styles.filter}>
       <div className={styles.wrapper}>
-        <Button text="На неделю" />
-        <Button text="На 10 дней" />
-        <Button text="На месяц" />
-      </div>
-      <div className={styles.wrapper}>
-        <Button text="Отменить" />
+        {BUTTONS_VALUE.map((value, index) => (
+          <Button
+            key={Math.random()}
+            value={value}
+            accountButton={index}
+            activeFilter={activeFilter}
+            setActiveFilter={setActiveFilter}
+          />
+        ))}
       </div>
     </div>
   );

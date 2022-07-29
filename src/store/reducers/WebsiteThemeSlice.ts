@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { Storage } from "../../model/Storage";
+import { STORAGE } from "../../service/STORAGE";
 
 export enum ThemeOptions {
   LIGHT = "light",
@@ -12,7 +12,7 @@ interface WebsiteThemeState {
 }
 
 const initialState: WebsiteThemeState = {
-  theme: Storage.getItem("webSiteTheme") || ThemeOptions.LIGHT,
+  theme: STORAGE.getItem("webSiteTheme") || ThemeOptions.LIGHT,
 };
 
 export const websiteThemeSlice = createSlice({

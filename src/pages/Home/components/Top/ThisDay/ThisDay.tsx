@@ -1,41 +1,46 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
 
 import styles from "./ThisDay.module.scss";
-import {ReactComponent as SunLogo} from "../../../../../images/weatherPictures/sun.svg";
-import {IWeather} from "../../../../../store/types/Weather";
-import {addZeroToLittleTime, getUserCityTime} from "../../../../helpers";
-import {getHours, getMinutes} from "date-fns";
+
+import {
+  addZeroToLittleTime,
+  getUserCityTime,
+} from "../../../../../helpers/helpers";
+
+import { IWeatherForDay } from "../../../../../types/Weather";
+
+import { GlobalSvgSelector } from "../../../../../images/GlobalSvgSelector";
 
 interface ThisDayProps {
-  weatherToday: IWeather;
+  weatherToday: IWeatherForDay;
 }
 
 export const ThisDay: FC<ThisDayProps> = (props) => {
-  const {weatherToday} = props;
+  const { weatherToday } = props;
 
-  const cityTime = getUserCityTime(weatherToday.timezone);
+  const cityTime = getUserCityTime(weatherToday?.timezone);
   const hoursAndMinutes = addZeroToLittleTime(
-    getHours(cityTime),
-    getMinutes(cityTime)
+    cityTime.getHours(),
+    cityTime.getMinutes()
   );
 
   return (
     <div className={styles.block}>
       <div className={styles.top}>
         <span className={styles.degrees}>
-          {Math.round(weatherToday.temperature)}°
+          {Math.round(weatherToday?.main.temp)}°
         </span>
         <span className={styles.day}>Сегодня</span>
       </div>
-
       <div className={styles.bottom}>
         <span className={styles.info}>
           <>Время: {hoursAndMinutes}</>
         </span>
-        <span className={styles.info}>Город: {weatherToday.city_name}</span>
+        <span className={styles.info}>Город: {weatherToday?.name}</span>
       </div>
-
-      <SunLogo className={styles.weather_picture} />
+      <div className={styles.weather_picture}>
+        <GlobalSvgSelector id={weatherToday?.weather[0].icon} />
+      </div>
     </div>
   );
 };
