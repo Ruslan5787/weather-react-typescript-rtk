@@ -1,17 +1,13 @@
-import axios from "axios";
+interface IAPI_WEATHER {
+  URL: string;
+  KEY: string;
+}
 
-const API_WEATHER = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
-});
+const API_WEATHER: IAPI_WEATHER = {
+  URL: "https://api.openweathermap.org/data/2.5",
+  KEY: "387129f21868e289849360695ce14435",
+};
 
-API_WEATHER.interceptors.request.use((config) => {
-  config.url =
-    config.url +
-    "&units=metric&appid=" +
-    process.env.REACT_APP_API_KEY +
-    "&lang=ru";
-
-  return config;
-});
-
-export default API_WEATHER;
+export function getWeatherUrl(type: string, cityName: string) {
+  return `${API_WEATHER.URL}/${type}?q=${cityName}&appid=${API_WEATHER.KEY}&units=metric&appid=&lang=ru`;
+}
