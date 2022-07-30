@@ -1,9 +1,9 @@
-import React, { FC, useState } from "react";
+import React, { FC, memo, useState } from "react";
 
 import { Filter } from "./Filter/Filter";
 import { CardsList } from "./CardsList/CardsList";
 
-export const Bottom: FC = () => {
+export const Bottom: FC = memo(() => {
   const [activeFilter, setActiveFilter] = useState<number>(0);
 
   return (
@@ -12,4 +12,4 @@ export const Bottom: FC = () => {
       <CardsList activeFilter={activeFilter} />
     </div>
   );
-};
+});

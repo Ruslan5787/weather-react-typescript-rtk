@@ -38,3 +38,7 @@ export const fetchForecast = createAsyncThunk(
     }
   }
 );
+
+// const url = "https://api.openweathermap.org/data/2.5";
+// const key = "387129f21868e289849360695ce14435";
+// ${url}/weather?q=${cityName}&appid=${key}&units=metric&appid=&lang=ru
