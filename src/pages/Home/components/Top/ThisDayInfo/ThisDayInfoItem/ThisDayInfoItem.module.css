@@ -46,11 +46,6 @@
   flex: 0 0 auto;
   align-items: center;
   background-color: var(--svg-background-default);
-  /*
-      @media (max-width: 880px) {
-        width: 1.975rem;
-        height: 1.975rem;
-      }*/
 }
 .item_img svg {
   width: 1.525rem;
