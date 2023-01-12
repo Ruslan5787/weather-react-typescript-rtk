@@ -1,17 +1,113 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "./src/styles/variables";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   Header.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./src/styles/variables\";\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Header.module.scss 1:9  root stylesheet";
+:root {
+    --body-background-dark: #0d1117;
+    --body-background-light: rgba(71, 147, 255, 0.2);
+    --body-background-default: var(--body-background-light);
+    --components-background-dark: #4f4f4f;
+    --components-background-light: #fff;
+    --components-background-default: var(--components-background-light);
+    --card-background-dark: #2e3035;
+    --card-background-light: rgba(71, 147, 255, 0.2);
+    --card-background-default: var(--card-background-light);
+    --card-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
+    --card-shadow-light: 0px 3px 20px rgba(147, 144, 144, 0.28);
+    --card-shadow-default: var(--card-shadow-light);
+    --select-background-dark: #4f4f4f;
+    --select-background-light: rgba(71, 147, 255, 0.2);
+    --select-background-default: var(--select-background-light);
+    --svg-background-dark: #2e3035;
+    --svg-background-light: #fff;
+    --svg-background-default: var(--svg-background-light);
+    --svg-fill-dark: #fff;
+    --svg-fill-light: #000;
+    --svg-fill-default: var(--svg-fill-light);
+    --error-notification-background-dark: #a62929;
+    --error-notification-background-light: #fc9c9c;
+    --error-notification-background-default: var(#fc9c9c);
+    --search-field-background-dark: #2e3035;
+    --search-field-background-light: rgba(71, 147, 255, 0.2);
+    --search-field-background-default: var(--search-field-background-light);
+    --text-color-dark: #fff;
+    --text-color-light: #000;
+    --text-color-default: var(--text-color-light);
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.43rem;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 4.06rem;
+    height: 4.0625rem;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 1.56rem;
+    line-height: 1.87em;
+    text-transform: uppercase;
+    color: #4793ff;
+    margin-left: 1.04em;
+    /*@media (max-width: 970px) {
+      font-size: 1.36rem;
+    }*/
+}
+
+.change_theme {
+    display: flex;
+    margin-right: 1.25rem;
+}
+
+.change_theme svg {
+    width: 1.43rem;
+    height: 1.68rem;
+}
+
+.search_field {
+    display: flex;
+    align-items: center;
+    background-color: var(--search-field-background-default);
+    border-radius: 0.625rem;
+}
+
+.search_field_input {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.25em;
+    color: var(--text-color-default);
+    width: 9.625rem;
+    border: none;
+    background: transparent;
+    padding: 0.5em 0.125em 0.5em 1.06em;
+}
+
+.search_field_input::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.25em;
+    color: var(--text-color-default);
+    display: flex;
+}
+
+.search_field_button {
+    display: flex;
+    padding-right: 0.625rem;
+}
+
+.search_field_button svg {
+    height: 1.5rem;
+}
+
+.search_field_button svg path {
+    fill: var(--svg-fill-default);
+}
+
+/*# sourceMappingURL=Header.module.css.map */

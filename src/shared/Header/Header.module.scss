@@ -1,9 +1,9 @@
-@import "./src/styles/variables";
+@import "../../styles/variables";
 
 .header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 23px;
+  margin-bottom: 1.43rem;
 }
 
 .wrapper {
@@ -12,47 +12,56 @@
 }
 
 .logo {
-  width: 65px;
-  height: 65px;
-  margin-right: 20px;
+  width: 4.06rem;
+  height: 4.0625rem;
 }
 
 .title {
   font-weight: 700;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 1.56rem;
+  line-height: 1.87em;
   text-transform: uppercase;
   color: $blueberry;
+  margin-left: 1.04em;
+
+  /*@media (max-width: 970px) {
+    font-size: 1.36rem;
+  }*/
 }
 
 .change_theme {
   display: flex;
-  margin-right: 20px;
+  margin-right: 1.25rem;
+
+  svg {
+    width: 1.43rem;
+    height: 1.68rem;
+  }
 }
 
 .search_field {
   display: flex;
   align-items: center;
   background-color: var(#{--search-field-background-default});
-  border-radius: 10px;
+  border-radius: 0.625rem;
 
   &_input {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 1.25em;
     color: var(#{--text-color-default});
 
-    width: 154px;
+    width: 9.625rem;
     border: none;
     background: transparent;
-    padding: 8px 2px 8px 17px;
+    padding: 0.5em 0.125em 0.5em 1.06em;
 
     &::placeholder {
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 1rem;
+      line-height: 1.25em;
       color: var(#{--text-color-default});
       display: flex;
     }
@@ -60,10 +69,11 @@
 
   &_button {
     display: flex;
-    padding-right: 10px;
+    padding-right: 0.625rem;
 
     svg {
-      height: 24px;
+      height: 1.5rem;
+
       path {
         fill: var(#{--svg-fill-default});
       }

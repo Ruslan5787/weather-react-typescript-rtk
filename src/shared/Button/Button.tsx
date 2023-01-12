@@ -13,9 +13,9 @@ export const Button: FC<ButtonProps> = (props) => {
   const { value, accountButton, activeFilter, setActiveFilter } = props;
   const isButtonActive = activeFilter === accountButton ? styles.active : "";
 
-  function handleClick() {
+  const handleClick = () => {
     setActiveFilter(accountButton);
-  }
+  };
 
   return (
     <button

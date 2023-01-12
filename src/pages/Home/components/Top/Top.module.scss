@@ -1,8 +1,13 @@
-@import "./src/styles/variables";
+@import "../../../../styles/variables";
 
 .wrapper {
   display: flex;
-  margin-bottom: 35px;
+  margin-bottom: 2.187rem;
+
+  @media(max-width: 600px) {
+    display: block;
+    margin-bottom: 1.387rem;
+  }
 }
 
 .this_day_info {
@@ -12,8 +17,25 @@
   flex: 65%;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
-  padding: 42px 32px;
+  padding: 2.625rem 2rem;
+  background-color: var(#{--components-background-default});
+  position: relative;
+  overflow: hidden;
 
-  background: url("../../../../images/home/thisDayStatistics/cloud.png")
-    no-repeat top right var(#{--components-background-default});
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  &_background_img {
+    position: absolute;
+    width: 29.376rem;
+    height: 12.025rem;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+
+  @media (max-width: 670px) {
+    padding: 1.825rem 1.6rem;
+  }
 }

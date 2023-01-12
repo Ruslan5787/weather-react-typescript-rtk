@@ -4,8 +4,6 @@
 
 .wrapper {
   display: flex;
-
-  :not(:last-child) {
-    margin-right: 15px;
-  }
+  flex-wrap: wrap;
+  gap: 0.937rem;
 }

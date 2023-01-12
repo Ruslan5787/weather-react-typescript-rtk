@@ -2,6 +2,8 @@ import React, { FC, useEffect } from "react";
 
 import styles from "./Top.module.scss";
 
+import cloud from "../../../../images/home/thisDayStatistics/cloud.png";
+
 import {
   getCityName,
   getIsLoadingWeatherToday,
@@ -32,7 +34,12 @@ export const Top: FC = () => {
         <LoadingThisDayInfo />
       ) : (
         <div className={styles.this_day_info}>
-          <ThisDayInfo weatherForDay={weatherToday} />{" "}
+          <ThisDayInfo weatherForDay={weatherToday} />
+          <img
+            className={styles.this_day_info_background_img}
+            src={cloud}
+            alt=""
+          />
         </div>
       )}
     </div>

@@ -1,17 +1,50 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "./src/styles/variables";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   CardsList.module.scss 1:9  root stylesheet */
-
-body::before {
-    font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-    "Droid Sans Mono", monospace, monospace;
-    white-space: pre;
-    display: block;
-    padding: 1em;
-    margin-bottom: 1em;
-    border-bottom: 2px solid black;
-    content: 'Error: Can\'t find stylesheet to import.\a   \2577 \a 1 \2502  @import "./src/styles/variables";\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   CardsList.module.scss 1:9  root stylesheet';
+:root {
+    --body-background-dark: #0d1117;
+    --body-background-light: rgba(71, 147, 255, 0.2);
+    --body-background-default: var(--body-background-light);
+    --components-background-dark: #4f4f4f;
+    --components-background-light: #fff;
+    --components-background-default: var(--components-background-light);
+    --card-background-dark: #2e3035;
+    --card-background-light: rgba(71, 147, 255, 0.2);
+    --card-background-default: var(--card-background-light);
+    --card-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
+    --card-shadow-light: 0px 3px 20px rgba(147, 144, 144, 0.28);
+    --card-shadow-default: var(--card-shadow-light);
+    --select-background-dark: #4f4f4f;
+    --select-background-light: rgba(71, 147, 255, 0.2);
+    --select-background-default: var(--select-background-light);
+    --svg-background-dark: #2e3035;
+    --svg-background-light: #fff;
+    --svg-background-default: var(--svg-background-light);
+    --svg-fill-dark: #fff;
+    --svg-fill-light: #000;
+    --svg-fill-default: var(--svg-fill-light);
+    --error-notification-background-dark: #a62929;
+    --error-notification-background-light: #fc9c9c;
+    --error-notification-background-default: var(#fc9c9c);
+    --search-field-background-dark: #2e3035;
+    --search-field-background-light: rgba(71, 147, 255, 0.2);
+    --search-field-background-default: var(--search-field-background-light);
+    --text-color-dark: #fff;
+    --text-color-light: #000;
+    --text-color-default: var(--text-color-light);
 }
+
+.list {
+    box-shadow: var(--card-shadow-default);
+    border-radius: 1.25rem;
+    background-color: var(--components-background-default);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.875rem;
+    padding: 1.25rem;
+}
+
+@media (max-width: 678px) {
+    .list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/*# sourceMappingURL=CardsList.module.css.map */

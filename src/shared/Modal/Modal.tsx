@@ -48,7 +48,9 @@ export const Modal: FC<ModalProps> = memo((props) => {
           <ThisDayInfo weatherForDay={weatherForDay} />
         </div>
 
-        <CloseButton changeActiveFlagModal={handleClickCloseBtn} />
+        <div className={styles.modal_close_btn}>
+          <CloseButton changeActiveFlagModal={handleClickCloseBtn} />
+        </div>
       </div>
     </div>
   );

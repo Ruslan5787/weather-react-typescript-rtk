@@ -3,10 +3,9 @@
 }
 
 .wrapper {
-  display: flex;
-}
-.wrapper :not(:last-child) {
-  margin-right: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.937rem;
 }
 
 /*# sourceMappingURL=Filter.module.css.map */

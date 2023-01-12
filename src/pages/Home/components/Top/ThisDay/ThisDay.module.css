@@ -1,17 +1,113 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "./src/styles/variables";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   ThisDay.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./src/styles/variables\";\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   ThisDay.module.scss 1:9  root stylesheet";
+:root {
+    --body-background-dark: #0d1117;
+    --body-background-light: rgba(71, 147, 255, 0.2);
+    --body-background-default: var(--body-background-light);
+    --components-background-dark: #4f4f4f;
+    --components-background-light: #fff;
+    --components-background-default: var(--components-background-light);
+    --card-background-dark: #2e3035;
+    --card-background-light: rgba(71, 147, 255, 0.2);
+    --card-background-default: var(--card-background-light);
+    --card-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
+    --card-shadow-light: 0px 3px 20px rgba(147, 144, 144, 0.28);
+    --card-shadow-default: var(--card-shadow-light);
+    --select-background-dark: #4f4f4f;
+    --select-background-light: rgba(71, 147, 255, 0.2);
+    --select-background-default: var(--select-background-light);
+    --svg-background-dark: #2e3035;
+    --svg-background-light: #fff;
+    --svg-background-default: var(--svg-background-light);
+    --svg-fill-dark: #fff;
+    --svg-fill-light: #000;
+    --svg-fill-default: var(--svg-fill-light);
+    --error-notification-background-dark: #a62929;
+    --error-notification-background-light: #fc9c9c;
+    --error-notification-background-default: var(#fc9c9c);
+    --search-field-background-dark: #2e3035;
+    --search-field-background-light: rgba(71, 147, 255, 0.2);
+    --search-field-background-default: var(--search-field-background-light);
+    --text-color-dark: #fff;
+    --text-color-light: #000;
+    --text-color-default: var(--text-color-light);
 }
+
+.block {
+    font-size: 5.4rem;
+    flex: 35%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--components-background-default);
+    box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+    border-radius: 0.208em;
+    padding: 0.208em;
+    margin-right: 0.52em;
+    /*
+      @media (max-width: 1100px) {
+        font-size: 4.9rem;
+      }
+
+      @media (max-width: 1024px) {
+        margin-right: 20px;
+      }
+
+      @media (max-width: 880px) {
+        font-size: 4rem;
+      }*/
+}
+
+@media (max-width: 600px) {
+    .block {
+        margin-right: 0;
+        margin-bottom: 0.32em;
+    }
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.322em;
+}
+
+.degrees {
+    font-weight: 500;
+    line-height: 1.218em;
+    color: #4793ff;
+}
+
+.day {
+    font-size: 0.416em;
+    line-height: 1.225em;
+    color: var(--text-color-default);
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom :not(:last-child) {
+    margin-bottom: 0.57em;
+}
+
+.info {
+    font-size: 0.26em;
+    line-height: 1.2em;
+    color: #939cb0;
+}
+
+.weather_picture {
+    width: 1.039em;
+    height: 1.039em;
+    top: 0.208em;
+    right: 0.208em;
+    position: absolute;
+}
+
+.weather_picture svg {
+    width: 100%;
+    height: 100%;
+}
+
+/*# sourceMappingURL=ThisDay.module.css.map */

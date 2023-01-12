@@ -1,4 +1,4 @@
-@import "./src/styles/variables";
+@import "../../../../../styles/variables";
 
 .list {
   box-shadow: var(#{--card-shadow-default});
@@ -7,6 +7,10 @@
 
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 14px;
-  padding: 20px;
+  grid-gap: 0.875rem;
+  padding: 1.25rem;
+
+  @media(max-width: 678px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
