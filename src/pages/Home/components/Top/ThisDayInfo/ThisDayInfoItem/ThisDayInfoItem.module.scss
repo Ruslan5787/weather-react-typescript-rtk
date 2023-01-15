@@ -3,7 +3,12 @@
 .item {
   display: flex;
   align-items: center;
+  z-index: 10;
   margin-bottom: 0.625rem;
+
+  :not(:last-child) {
+    margin-right: 1.257em;
+  }
 
   &_img {
     width: 2.375rem;
@@ -21,12 +26,6 @@
       width: 1.525rem;
       height: 1.525rem;
     }
-
-    /*
-        @media (max-width: 880px) {
-          width: 1.975rem;
-          height: 1.975rem;
-        }*/
   }
 
   &_type {
@@ -46,7 +45,7 @@
     color: var(#{--text-color-default});
   }
 
-  :not(:last-child) {
-    margin-right: 1.257em;
+  @media (max-width: 730px) {
+    margin-bottom: 0.825rem;
   }
 }

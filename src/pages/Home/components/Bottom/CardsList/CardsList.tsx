@@ -49,7 +49,7 @@ export const CardsList: FC<CardsListProps> = memo((props) => {
       isModalOpen={isModalOpen}
       setIsModalOpen={setIsModalOpen}
       setModalForClickedCard={clickForCard}
-      // I use weather dt how id for card
+      // Use weather dt how id for card
       isModalForClickedCard={clickedCardId === item?.dt}
     >
       <GlobalSvgSelector id={item.weather[0].icon} />

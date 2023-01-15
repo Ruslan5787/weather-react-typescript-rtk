@@ -11,14 +11,6 @@ html {
   @media (max-width: 1280px) {
     font-size: 14px;
   }
-
-  @media (max-width: 970px) {
-    font-size: 11px;
-  }
-
-  @media (max-width: 980px) {
-    font-size: 9px;
-  }
 }
 
 body {
@@ -40,6 +32,10 @@ button {
 
 input:focus {
   outline: none;
+}
+
+h1 {
+  margin: 0;
 }
 
 p {

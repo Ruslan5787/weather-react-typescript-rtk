@@ -34,7 +34,9 @@ export const Top: FC = () => {
         <LoadingThisDayInfo />
       ) : (
         <div className={styles.this_day_info}>
-          <ThisDayInfo weatherForDay={weatherToday} />
+          <div className={styles.this_day_info_items}>
+            <ThisDayInfo weatherForDay={weatherToday} />
+          </div>
           <img
             className={styles.this_day_info_background_img}
             src={cloud}

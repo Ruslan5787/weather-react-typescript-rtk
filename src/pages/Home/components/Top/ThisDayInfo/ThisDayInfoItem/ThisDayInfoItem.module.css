@@ -32,20 +32,26 @@
 }
 
 .item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.625rem;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    margin-bottom: 0.625rem;
 }
+
+.item :not(:last-child) {
+    margin-right: 1.257em;
+}
+
 .item_img {
-  width: 2.375rem;
-  height: 2.375rem;
-  border-radius: 50%;
-  box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
-  display: flex;
-  justify-content: center;
-  flex: 0 0 auto;
-  align-items: center;
-  background-color: var(--svg-background-default);
+    width: 2.375rem;
+    height: 2.375rem;
+    border-radius: 50%;
+    box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    flex: 0 0 auto;
+    align-items: center;
+    background-color: var(--svg-background-default);
 }
 .item_img svg {
   width: 1.525rem;
@@ -66,8 +72,11 @@
   line-height: 1.123em;
   color: var(--text-color-default);
 }
-.item :not(:last-child) {
-  margin-right: 1.257em;
+
+@media (max-width: 730px) {
+    .item {
+        margin-bottom: 0.825rem;
+    }
 }
 
 /*# sourceMappingURL=ThisDayInfoItem.module.css.map */

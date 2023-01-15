@@ -14,9 +14,12 @@ export const Header: FC = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.wrapper}>
-        <HeaderLogo className={styles.logo} />
-        <h1 className={styles.title}>Weather</h1>
+      <div className={`${styles.wrapper} ${styles.wrapper_left}`}>
+        <div className={""}>
+          <HeaderLogo className={styles.logo} />
+        </div>
+
+        <h1 className={styles.title}>Прогноз погоды</h1>
       </div>
 
       {notificationValue && (

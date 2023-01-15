@@ -14,7 +14,11 @@
   padding: 0.208em;
   margin-right: 0.520em;
 
-  @media (max-width: 600px) {
+  @media (max-width: 980px) {
+    font-size: 5rem;
+  }
+
+  @media (max-width: 730px) {
     margin-right: 0;
     margin-bottom: 0.32em;
   }
@@ -24,6 +28,10 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 0.322em;
+
+  @media (max-width: 980px) {
+    margin-bottom: 0.15em;
+  }
 }
 
 .degrees {
@@ -44,6 +52,10 @@
 
   :not(:last-child) {
     margin-bottom: 0.570em;
+
+    @media (max-width: 980px) {
+      margin-bottom: 0.27em;
+    }
   }
 }
 
@@ -59,6 +71,16 @@
   top: 0.208em;
   right: 0.208em;
   position: absolute;
+
+  @media(max-width: 730px) {
+    width: 1.279em;
+    height: 1.279em;
+  }
+
+  @media(max-width: 730px) {
+    width: 1.12em;
+    height: 1.12em;
+  }
 
   svg {
     width: 100%;
