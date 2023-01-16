@@ -28,7 +28,7 @@ export const SearchField = () => {
       <input
         className={styles.search_field_input}
         type="text"
-        placeholder="Выбрать город"
+        placeholder="Впишите город"
         value={fieldValue}
         onChange={handleChange}
       />

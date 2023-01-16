@@ -59,6 +59,18 @@
     overflow: hidden;
 }
 
+@media (max-width: 980px) {
+    .this_day_info {
+        padding: 2.125rem 1.8rem;
+    }
+}
+
+@media (max-width: 670px) {
+    .this_day_info {
+        padding: 1.825rem 1.6rem;
+    }
+}
+
 .this_day_info_items {
     display: flex;
     flex-direction: column;
@@ -75,7 +87,6 @@
         margin-bottom: 0;
     }
 }
-
 .this_day_info_background_img {
     position: absolute;
     width: 29.376rem;
@@ -84,15 +95,17 @@
     top: 0;
 }
 
-@media (max-width: 980px) {
-    .this_day_info {
-        padding: 2.125rem 1.8rem;
+@media (max-width: 1000px) {
+    .this_day_info_background_img {
+        width: 23.476rem;
+        height: 9.325rem;
     }
 }
 
-@media (max-width: 670px) {
-    .this_day_info {
-        padding: 1.825rem 1.6rem;
+@media (max-width: 550px) {
+    .this_day_info_background_img {
+        width: 17.076rem;
+        height: 7.825rem;
     }
 }
 

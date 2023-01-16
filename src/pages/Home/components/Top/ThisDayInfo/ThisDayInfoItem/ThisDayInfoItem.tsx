@@ -13,8 +13,10 @@ export const ThisDayInfoItem: FC<ThisDayInfoItemProps> = (props) => {
 
   return (
     <div className={styles.item}>
-      <div className={styles.item_img}>{children}</div>
-      <span className={styles.item_type}>{textName}</span>
+      <div className={styles.item_header}>
+        <div className={styles.item_img}>{children}</div>
+        <span className={styles.item_type}>{textName}</span>
+      </div>
       <p className={styles.item_info}>{textValue}</p>
     </div>
   );

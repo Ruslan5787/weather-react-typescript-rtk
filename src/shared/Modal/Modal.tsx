@@ -21,9 +21,9 @@ export const Modal: FC<ModalProps> = memo((props) => {
   const { weatherForDay, setIsModalOpen, children } = props;
   const cityName = useAppSelector(getCityName);
 
-  function handleOutsideClick() {
+  const handleOutsideClick = () => {
     setIsModalOpen(false);
-  }
+  };
 
   const handleClickInModal: React.MouseEventHandler<HTMLDivElement> = (
     event
@@ -31,9 +31,9 @@ export const Modal: FC<ModalProps> = memo((props) => {
     event.stopPropagation();
   };
 
-  function handleClickCloseBtn() {
+  const handleClickCloseBtn = () => {
     setIsModalOpen(false);
-  }
+  };
 
   return (
     <div className={styles.modal} onClick={handleOutsideClick}>

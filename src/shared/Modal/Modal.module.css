@@ -1,17 +1,167 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "./src/styles/variables";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   Modal.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./src/styles/variables\";\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   Modal.module.scss 1:9  root stylesheet";
+:root {
+  --body-background-dark: #0d1117;
+  --body-background-light: rgba(71, 147, 255, 0.2);
+  --body-background-default: var(--body-background-light);
+  --components-background-dark: #4f4f4f;
+  --components-background-light: #fff;
+  --components-background-default: var(--components-background-light);
+  --card-background-dark: #2e3035;
+  --card-background-light: rgba(71, 147, 255, 0.2);
+  --card-background-default: var(--card-background-light);
+  --card-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
+  --card-shadow-light: 0px 3px 20px rgba(147, 144, 144, 0.28);
+  --card-shadow-default: var(--card-shadow-light);
+  --select-background-dark: #4f4f4f;
+  --select-background-light: rgba(71, 147, 255, 0.2);
+  --select-background-default: var(--select-background-light);
+  --svg-background-dark: #2e3035;
+  --svg-background-light: #fff;
+  --svg-background-default: var(--svg-background-light);
+  --svg-fill-dark: #fff;
+  --svg-fill-light: #000;
+  --svg-fill-default: var(--svg-fill-light);
+  --error-notification-background-dark: #a62929;
+  --error-notification-background-light: #fc9c9c;
+  --error-notification-background-default: var(#fc9c9c);
+  --search-field-background-dark: #2e3035;
+  --search-field-background-light: rgba(71, 147, 255, 0.2);
+  --search-field-background-default: var(--search-field-background-light);
+  --text-color-dark: #fff;
+  --text-color-light: #000;
+  --text-color-default: var(--text-color-light);
 }
+
+.modal {
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal_body {
+  width: 46.875rem;
+  position: relative;
+  background-color: var(--components-background-default);
+  box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+  border-radius: 1.25rem;
+  padding: 2.625rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1080px) {
+  .modal_body {
+    width: 42.375rem;
+    padding: 1.825rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .modal_body {
+    width: 40.775rem;
+    padding: 1.225rem;
+  }
+}
+
+@media (max-width: 730px) {
+  .modal_body {
+    flex-direction: column;
+    margin: 100px;
+  }
+}
+
+@media (max-width: 630px) {
+  .modal_body {
+    margin: 60px;
+  }
+}
+
+.modal_this_day_wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 35%;
+  justify-content: space-between;
+  background-color: var(--components-background-default);
+  margin-right: 3.125rem;
+}
+
+.modal_left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.912rem;
+}
+
+@media (max-width: 730px) {
+  .modal_left {
+    margin-right: 0;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #939cb0;
+  }
+}
+
+.modal_left svg {
+  width: 53px;
+  height: 53px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 730px) {
+  .modal_left svg {
+    margin-bottom: 0;
+  }
+}
+
+.modal_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal_close_btn {
+  width: 1.125rem;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.modal_degrees {
+  font-weight: 500;
+  font-size: 3.75rem;
+  line-height: 1.21em;
+  color: #4793ff;
+}
+
+.modal_day {
+  font-weight: 400;
+  font-size: 1.5625rem;
+  line-height: 1.2em;
+  color: var(--text-color-default);
+  margin-bottom: 0.48em;
+}
+
+@media (max-width: 730px) {
+  .modal_day {
+    margin-bottom: 0;
+  }
+}
+
+.modal_bottom_info {
+  font-size: 0.9375rem;
+  line-height: 1.2em;
+  color: #939cb0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal_bottom_info :not(:last-child) {
+  margin-bottom: 0.1875em;
+}
+
+/*# sourceMappingURL=Modal.module.css.map */

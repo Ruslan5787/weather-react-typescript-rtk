@@ -37,25 +37,31 @@
     margin-bottom: 1.43rem;
 }
 
+@media (max-width: 600px) {
+    .header {
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
 .wrapper {
     display: flex;
     align-items: center;
 }
-
 .wrapper_left {
     margin-right: 1rem;
+}
+
+@media (max-width: 600px) {
+    .wrapper_left {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
 }
 
 .logo {
     width: 4.06rem;
     height: 4.0625rem;
-}
-
-@media (max-width: 730px) {
-    .logo {
-        width: 3.56rem;
-        height: 3.5625rem;
-    }
 }
 
 .title {
@@ -67,20 +73,6 @@
     margin-left: 1.04em;
 }
 
-@media (max-width: 730px) {
-    .title {
-        font-size: 1.4rem;
-        margin-left: 0.74em;
-    }
-}
-
-@media (max-width: 730px) {
-    .title {
-        font-size: 1.3rem;
-        margin-left: 0.74em;
-    }
-}
-
 .change_theme {
     display: flex;
     margin-right: 1.25rem;
@@ -89,6 +81,12 @@
 @media (max-width: 730px) {
     .change_theme {
         margin-right: 0.85rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .change_theme {
+        margin-right: 1.25rem;
     }
 }
 .change_theme svg {
@@ -112,6 +110,13 @@
     border: none;
     background: transparent;
     padding: 0.5em 0.125em 0.5em 1.06em;
+}
+
+@media (max-width: 600px) {
+    .search_field_input {
+        width: 10rem;
+        padding: 0.7em 0.225em 0.7em 1.066em;
+    }
 }
 .search_field_input::placeholder {
     font-family: "Montserrat", sans-serif;

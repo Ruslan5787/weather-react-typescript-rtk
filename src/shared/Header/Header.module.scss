@@ -4,6 +4,11 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.43rem;
+
+  @media (max-width: 600px) {
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .wrapper {
@@ -12,17 +17,17 @@
 
   &_left {
     margin-right: 1rem;
+
+    @media (max-width: 600px) {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
   }
 }
 
 .logo {
   width: 4.06rem;
   height: 4.0625rem;
-
-  @media (max-width: 730px) {
-    width: 3.56rem;
-    height: 3.5625rem
-  }
 }
 
 .title {
@@ -32,16 +37,6 @@
   text-transform: uppercase;
   color: $blueberry;
   margin-left: 1.04em;
-
-  @media (max-width: 730px) {
-    font-size: 1.4rem;
-    margin-left: 0.74em;
-  }
-
-  @media (max-width: 730px) {
-    font-size: 1.3rem;
-    margin-left: 0.74em;
-  }
 }
 
 .change_theme {
@@ -50,6 +45,10 @@
 
   @media (max-width: 730px) {
     margin-right: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    margin-right: 1.25rem;
   }
 
   svg {
@@ -75,6 +74,11 @@
     border: none;
     background: transparent;
     padding: 0.5em 0.125em 0.5em 1.06em;
+
+    @media (max-width: 600px) {
+      width: 10rem;
+      padding: 0.7em 0.225em 0.7em 1.066em;;
+    }
 
     &::placeholder {
       font-family: "Montserrat", sans-serif;
